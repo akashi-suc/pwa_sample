@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, user-scalable=no">
+		<link rel="manifest" href="/bin/manifest.json">
+		<script>
+		window.addEventListener('load', function() {	
+		  if ('serviceWorker' in navigator) {
+		    navigator.serviceWorker.register("/bin/service-worker.js")
+		      .then(function(registration) {
+		        console.log("serviceWorker registed.");
+		      }).catch(function(error) {
+		        console.warn("serviceWorker error.", error);
+		      });
+		  }
+		});
+		</script>
+	</head>
+
+	<body>
+		ふが
+	</body>
+
+</html>

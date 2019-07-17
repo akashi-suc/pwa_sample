@@ -1,0 +1,11 @@
+{
+  "name": "App Name",
+  "short_name": "short name",
+  "icons": [{
+      "src": "images/ico/128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    }],
+  "start_url": "/bin/index.html",
+  "display": "standalone"
+}
