@@ -22,7 +22,7 @@
       "sizes": "256x256",
       "type": "image/png"
     }],
-  "start_url": "index.html",
+  "start_url": "https://akashi-suc.github.io/pwa_sample/",
   "display": "standalone",
   "orientation": "landscape"
 }
