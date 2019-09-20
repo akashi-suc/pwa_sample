@@ -26,7 +26,7 @@
     }],
   "start_url": "./",
   "scope": "./",
-  "display": "fullscreen",
+  "display": "standalone",
   "orientation": "landscape",
   "name": "ふがふが ふごふご",
   "short_name": "ふごます",
