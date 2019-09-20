@@ -20,8 +20,8 @@
       "sizes": "256x256",
       "type": "image/png"
     }],
-  "start_url": "/",
-  "scope": "/",
+  "start_url": "./",
+  "scope": "./",
   "display": "fullscreen",
   "orientation": "landscape",
   "name": "ふがふが ふごふご",
