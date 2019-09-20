@@ -1,6 +1,4 @@
 {
-  "name": "App Name",
-  "short_name": "short name",
   "icons": [{
       "src": "https://raw.githubusercontent.com/akashi-suc/pwa_sample/master/images/ico/128.png",
       "sizes": "128x128",
