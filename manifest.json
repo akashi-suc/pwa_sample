@@ -22,8 +22,12 @@
       "sizes": "256x256",
       "type": "image/png"
     }],
-  "start_url": "./",
+  "start_url": "/",
   "scope": "/",
   "display": "fullscreen",
-  "orientation": "landscape"
+  "orientation": "landscape",
+  "name": "ふがふが ふごふご",
+  "short_name": "ふごます",
+  "theme_color": "#8adfff",
+  "background_color": "#8adfff",
 }
