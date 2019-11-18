@@ -30,17 +30,27 @@
 		  	
 		  	// 許可の確認
 		    navigator.permissions.query({name:'clipboard-read'}).then(function(result) {
-				console.log('Permission ' + result.state);
-				if(result.state == "prompt"){
-					if(navigator.clipboard){
-					    navigator.clipboard.readText()
-					    .then(function(text){
-					        alert(text);
-					    });
-					} else {
-						console.log("error");	
-					}
+				console.log('Permission ' + result.state);	
+				switch(result.state) {
+				
+					case "granted":	
+					case "prompt":
+						if(navigator.clipboard){
+						    navigator.clipboard.readText()
+						    .then(function(text){
+						        
+						    });alert(text);
+						} else {
+							console.log("error");	
+						}
+					break;
+					
+					default:
+						console.log("Permission Error");
+					break;
+				
 				}
+				
 			});
 			
 			// デバッグ用処理 全ての権限を破棄
