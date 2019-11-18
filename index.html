@@ -65,15 +65,31 @@
 			}
 		  	
 		  	if(isFirefox){
-		  		permissionName = 'clipboard-read';
-		  		if(navigator.clipboard){
-				    navigator.clipboard.readText()
-				    .then(function(text){
-				       alert(text); 
-				    });
-				} else {
-					console.log("error");	
-				}
+		  		permissionName = 'clipboardRead';
+		  		// 許可の確認
+			    navigator.permissions.query({name:permissionName}).then(function(result) {
+					console.log('Permission ' + result.state);	
+					switch(result.state) {
+					
+						case "granted":	
+						case "prompt":
+							if(navigator.clipboard){
+							    navigator.clipboard.readText()
+							    .then(function(text){
+							       alert(text); 
+							    });
+							} else {
+								console.log("error");	
+							}
+						break;
+						
+						default:
+							console.log("Permission Error");
+						break;
+					
+					}
+					
+				});
 		  	}
 			
 			// デバッグ用処理 全ての権限を破棄
