@@ -25,7 +25,11 @@
 		      });
 		  }
 		  
+		  // Chrome用処理
 		  if ('permissions' in navigator) {
+		  	
+		  	// 許可の確認
+		  	/*
 		    navigator.permissions.query({name:'clipboard-read'}).then(function(result) {
 				//console.log('Permission ' + result.state);
 				if(result.state == "prompt"){
@@ -39,6 +43,14 @@
 					}
 				}
 			});
+			*/
+			
+			// デバッグ用処理 全ての権限を破棄
+			navigator.permissions.revoke({name:'clipboard-read'})
+		    .then((result) => {
+		      console.log(result.state);
+		    });
+			
 		  }
 		  
 		});
