@@ -68,17 +68,21 @@
 		  	if(isFirefox){
 
 				function paste(el) {
+					
+					/*
 					navigator.clipboard.readText()
 					.then(function(text){
 				    	el.value = text;
 				    	console.log('ペーストされたテキスト: ', text);
 				    });
-				    /*
-				  	})
-				  		.catch(err => {
-				    	console.error('ユーザが拒否、もしくはなんらかの理由で失敗', err);
-				  	});
-				  	*/
+				    */
+				    
+				    if(navigator.clipboard.readText){
+				    	alert("OK");
+				    } else {
+				    	alert("NG");
+				    }
+				    
 				}
 
 				var targetForm = document.getElementById("InputId");
