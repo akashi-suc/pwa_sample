@@ -48,7 +48,8 @@
 							if(navigator.clipboard){
 							    navigator.clipboard.readText()
 							    .then(function(text){
-							       alert(text); 
+							       var targetForm = document.getElementById("InputId");
+							       targetForm.value = text;
 							    });
 							} else {
 								console.log("error");	
@@ -65,31 +66,21 @@
 			}
 		  	
 		  	if(isFirefox){
-		  		permissionName = 'clipboardRead';
-		  		// 許可の確認
-			    navigator.permissions.query({name:permissionName}).then(function(result) {
-					console.log('Permission ' + result.state);	
-					switch(result.state) {
-					
-						case "granted":	
-						case "prompt":
-							if(navigator.clipboard){
-							    navigator.clipboard.readText()
-							    .then(function(text){
-							       alert(text); 
-							    });
-							} else {
-								console.log("error");	
-							}
-						break;
-						
-						default:
-							console.log("Permission Error");
-						break;
-					
-					}
-					
-				});
+
+				function paste(el) {
+					navigator.clipboard.readText()
+						.then((text) => {
+				    	el.value = text;
+				    	console.log('ペーストされたテキスト: ', text);
+				  	})
+				  		.catch(err => {
+				    	console.error('ユーザが拒否、もしくはなんらかの理由で失敗', err);
+				  	});
+				}
+
+				var targetForm = document.getElementById("InputId");
+				paste(targetForm);
+
 		  	}
 			
 			// デバッグ用処理 全ての権限を破棄
@@ -105,7 +96,10 @@
 		</script>
 	</head>
 
-	<body>
+	<body
+	
+	<label>ふが：<input id="InputId" type="text" name="name" size="40"></label>
+	
 	
 	<!--
 		<a href = "https://akashi-suc.github.io/pwa_sample/?token=eJybvNBwhaGRkamFpZHFCncfC8tEA0tfAE2uBnY.">https://akashi-suc.github.io/pwa_sample/?token=eJybvNBwhaGRkamFpZHFCncfC8tEA0tfAE2uBnY.</a><br>
