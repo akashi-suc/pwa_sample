@@ -29,7 +29,6 @@
 		  if ('permissions' in navigator) {
 		  	
 		  	// 許可の確認
-		  	/*
 		    navigator.permissions.query({name:'clipboard-read'}).then(function(result) {
 				//console.log('Permission ' + result.state);
 				if(result.state == "prompt"){
@@ -43,14 +42,14 @@
 					}
 				}
 			});
-			*/
 			
 			// デバッグ用処理 全ての権限を破棄
+			/*
 			navigator.permissions.revoke({name:'clipboard-read'})
 		    .then((result) => {
 		      console.log(result.state);
 		    });
-			
+			*/
 		  }
 		  
 		});
@@ -59,9 +58,11 @@
 
 	<body>
 	
+	<!--
 		<a href = "https://akashi-suc.github.io/pwa_sample/?token=eJybvNBwhaGRkamFpZHFCncfC8tEA0tfAE2uBnY.">https://akashi-suc.github.io/pwa_sample/?token=eJybvNBwhaGRkamFpZHFCncfC8tEA0tfAE2uBnY.</a><br>
 		
 		<a href = "https://akashi-suc.github.io/pwa_sample">https://akashi-suc.github.io/pwa_sample</a><br>
+	-->
 
 	</body>
 
