@@ -72,12 +72,22 @@
 					//alert(el.target.value);
 					
 					
-					navigator.clipboard.read()
-					.then(function(text){
-				    	el.value = text;
-				    	console.log('ペーストされたテキスト: ', text);
-				    });
+					navigator.clipboard.read().then(function(data) {
+					  for (var i = 0; i < data.items.length; i++) {
+					    if (data.items[i].type == "text/plain") {
+					      console.log("Your string: ", data.items[i].getAs("text/plain"));
+					    } else {
+					      console.error("No text/plain data on clipboard.");
+					    }
+					  }
+					});
 				    
+				    /*
+				    document.addEventListener('copy', function(e) {
+					  e.preventDefault();
+					  e.clipboardData.setData('text/plain', 'Hello, world!'); // copy
+					});
+				    */
 				    
 				    /*
 				    
