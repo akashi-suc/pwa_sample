@@ -67,9 +67,9 @@
 		  	
 		  	if(isFirefox){
 
-				function paste(el) {
+				//function paste(el) {
 				
-					alert(el.target.value);
+					//alert(el.target.value);
 					
 					/*
 					navigator.clipboard.readText()
@@ -88,10 +88,12 @@
 				    }
 				    */
 				    
-				}
+				//}
 
 				var targetForm = document.getElementById("InputId");
-				paste(targetForm);
+			    targetForm.addEventListener("paste", function(event){
+			        alert(e.target.value);
+			    });
 
 		  	}
 			
