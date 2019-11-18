@@ -69,13 +69,16 @@
 
 				function paste(el) {
 					navigator.clipboard.readText()
-						.then((text) => {
+					.then(function(text){
 				    	el.value = text;
 				    	console.log('ペーストされたテキスト: ', text);
+				    });
+				    /*
 				  	})
 				  		.catch(err => {
 				    	console.error('ユーザが拒否、もしくはなんらかの理由で失敗', err);
 				  	});
+				  	*/
 				}
 
 				var targetForm = document.getElementById("InputId");
