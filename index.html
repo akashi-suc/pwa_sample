@@ -28,8 +28,10 @@
 		  // Chrome用処理
 		  if ('permissions' in navigator) {
 		  	
+		  	var permissionName = 'clipboard-read';
+		  	
 		  	// 許可の確認
-		    navigator.permissions.query({name:'clipboard-read'}).then(function(result) {
+		    navigator.permissions.query({name:permissionName}).then(function(result) {
 				console.log('Permission ' + result.state);	
 				switch(result.state) {
 				
