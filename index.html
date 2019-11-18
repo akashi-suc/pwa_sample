@@ -27,33 +27,54 @@
 		  
 		  // Chrome用処理
 		  if ('permissions' in navigator) {
+		  
+		  	var ua = navigator.userAgent.toLowerCase();
+		  	
+		  	// Google Chrome
+			var isChrome = (ua.indexOf('chrome') > -1) && (ua.indexOf('edge') == -1);
+			// Firefox
+			var isFirefox = (ua.indexOf('firefox') > -1);
 		  	
 		  	var permissionName = 'clipboard-read';
 		  	
-		  	// 許可の確認
-		    navigator.permissions.query({name:permissionName}).then(function(result) {
-				console.log('Permission ' + result.state);	
-				switch(result.state) {
-				
-					case "granted":	
-					case "prompt":
-						if(navigator.clipboard){
-						    navigator.clipboard.readText()
-						    .then(function(text){
-						       alert(text); 
-						    });
-						} else {
-							console.log("error");	
-						}
-					break;
+		  	if(isChrome){
+		  		// 許可の確認
+			    navigator.permissions.query({name:permissionName}).then(function(result) {
+					console.log('Permission ' + result.state);	
+					switch(result.state) {
 					
-					default:
-						console.log("Permission Error");
-					break;
-				
+						case "granted":	
+						case "prompt":
+							if(navigator.clipboard){
+							    navigator.clipboard.readText()
+							    .then(function(text){
+							       alert(text); 
+							    });
+							} else {
+								console.log("error");	
+							}
+						break;
+						
+						default:
+							console.log("Permission Error");
+						break;
+					
+					}
+					
+				});
+			}
+		  	
+		  	if(isFirefox){
+		  		permissionName = 'clipboard-read';
+		  		if(navigator.clipboard){
+				    navigator.clipboard.readText()
+				    .then(function(text){
+				       alert(text); 
+				    });
+				} else {
+					console.log("error");	
 				}
-				
-			});
+		  	}
 			
 			// デバッグ用処理 全ての権限を破棄
 			/*
