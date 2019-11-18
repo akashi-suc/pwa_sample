@@ -24,6 +24,13 @@
 		        console.warn("serviceWorker error.", error);
 		      });
 		  }
+		  
+		  if ('permissions' in navigator) {
+		    navigator.permissions.query({name:'clipboard-read'}).then(function(result) {
+				console.log('Permission ' + result.state);
+			});
+		  }
+		  
 		});
 		</script>
 	</head>
