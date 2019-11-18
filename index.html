@@ -30,7 +30,10 @@
 				//console.log('Permission ' + result.state);
 				if(result.state == "prompt"){
 					if(navigator.clipboard){
-					    navigator.clipboard.readText(str);
+					    navigator.clipboard.readText()
+					    .then(function(text){
+					        alert(text);
+					    });
 					} else {
 						console.log("error");	
 					}
