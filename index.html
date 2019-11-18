@@ -67,17 +67,17 @@
 		  	
 		  	if(isFirefox){
 
-				//function paste(el) {
+				function paste(el) {
 				
 					//alert(el.target.value);
 					
-					/*
-					navigator.clipboard.readText()
+					
+					navigator.clipboard.read()
 					.then(function(text){
 				    	el.value = text;
 				    	console.log('ペーストされたテキスト: ', text);
 				    });
-				    */
+				    
 				    
 				    /*
 				    
@@ -88,10 +88,13 @@
 				    }
 				    */
 				    
-				//}
+				}
 
-				/*
+				
 				var targetForm = document.getElementById("InputId");
+				paste(targetForm);
+				
+				/*
 			    targetForm.addEventListener("paste", function(event){
 			        
 			        console.log("event:" + event.currentTarget.value);
@@ -99,11 +102,6 @@
 			    });
 			    */
 			    
-			    document.addEventListener("paste", function(event){
-			        
-			        console.log("event:" + event.currentTarget.value);
-			        
-			    });
 
 		  	}
 			
