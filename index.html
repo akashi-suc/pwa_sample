@@ -165,18 +165,11 @@
 
 	<script type="text/javascript">
 	 function validate(evt) {
-	   var theEvent = evt || window.event;
-	   var key = theEvent.keyCode || theEvent.which;
-	   key = String.fromCharCode(key);
-	  var regex = /[]|\./;
-	   if(!regex.test(key)) {
-	    theEvent.returnValue = false;
-	    if(theEvent.preventDefault) theEvent.preventDefault();
-	  }
+		window.blur();
 	 }
 	 </script>
 	  <span>Textbox name</span>
-	 <input name="ReceiveNo" type="text" class="txtbox" onkeypress='validate(event)' value=""         required tabindex="" />
+	 <input name="ReceiveNo" type="text" class="txtbox" onclick='validate(event)' value=""         required tabindex="" />
 	
 
 	</body>
