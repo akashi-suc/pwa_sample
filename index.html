@@ -148,17 +148,36 @@
 	
 	<p />
 	
-	<div contentEditable="true">ここは編集できる</div>
+	<div contentEditable="true">編集可能</div>
 
 	<p />
 	
 	<div contentEditable="false">編集出来ない</div>
+	
+	<p />
+	
 	
 	<!--
 		<a href = "https://akashi-suc.github.io/pwa_sample/?token=eJybvNBwhaGRkamFpZHFCncfC8tEA0tfAE2uBnY.">https://akashi-suc.github.io/pwa_sample/?token=eJybvNBwhaGRkamFpZHFCncfC8tEA0tfAE2uBnY.</a><br>
 		
 		<a href = "https://akashi-suc.github.io/pwa_sample">https://akashi-suc.github.io/pwa_sample</a><br>
 	-->
+
+	<script type="text/javascript">
+	 function validate(evt) {
+	   var theEvent = evt || window.event;
+	   var key = theEvent.keyCode || theEvent.which;
+	   key = String.fromCharCode(key);
+	  var regex = /[]|\./;
+	   if(!regex.test(key)) {
+	    theEvent.returnValue = false;
+	    if(theEvent.preventDefault) theEvent.preventDefault();
+	  }
+	 }
+	 </script>
+	  <span>Textbox name</span>
+	 <input name="ReceiveNo" type="text" class="txtbox" onkeypress='validate(event)' value=""         required tabindex="" />
+	
 
 	</body>
 
