@@ -164,13 +164,19 @@
 	-->
 
 	<script type="text/javascript">
+	
 	 function validate(evt) {
 		evt.target.blur();
 		alert("call");
 	 }
+	 
+	 function mouseDown(evt) {
+	 	evt.target.focus();
+	 }
+	 
 	 </script>
 	  <span>Textbox name</span>
-	 <input name="ReceiveNo" type="text" class="txtbox" onclick='validate(event)' value=""         required tabindex="" />
+	 <input name="ReceiveNo" type="text" class="txtbox" onclick='validate(event)' onmousedown='mouseDown(event)' value=""         required tabindex="" />
 	
 
 	</body>
