@@ -165,11 +165,12 @@
 
 	<script type="text/javascript">
 	 function validate(evt) {
-		window.blur();
+		evt.target.blur();
+		alert("call");
 	 }
 	 </script>
 	  <span>Textbox name</span>
-	 <input name="ReceiveNo" type="text" class="txtbox" onclick='validate(event)' value=""         required tabindex="" />
+	 <input name="ReceiveNo" type="text" class="txtbox" onFocus='validate(event)' value=""         required tabindex="" />
 	
 
 	</body>
