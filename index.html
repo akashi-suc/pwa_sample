@@ -57,7 +57,16 @@
 						break;
 						
 						default:
-							console.log("Permission Error");
+							navigator.permissions.revoke({name:'clipboard-read'})
+						    .then((result) => {
+						     	if(navigator.clipboard){
+								    navigator.clipboard.readText()
+								    .then(function(text){
+								       var targetForm = document.getElementById("InputId");
+								       targetForm.value = text;
+								    });
+								} 
+						    });
 						break;
 					
 					}
