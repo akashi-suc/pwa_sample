@@ -124,6 +124,8 @@
 			*/
 		  }
 		  
+		  var field = document.getElementById("hoga");  
+		  field.focus();
 		  
 		  document.addEventListener("paste", function(event){
 			        
@@ -140,7 +142,9 @@
 	
 	<label>ふが：<input id="InputId" type="text" name="name" size="40"></label>
 	
-	<label>ほが：<input disabled maxlength='0' size='1'>
+	<p />
+	
+	<label>ほが：<input disabled id="hoga" maxlength='0' size='1'>
 	
 	
 	<!--
